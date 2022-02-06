@@ -40,7 +40,7 @@ pipeline {
      stage ('Docker container creation'){
              steps {
                             sshagent(['jenkins']) {
-                            sh 'ssh -o StrictHostKeyChecking=no vagrant@100.0.0.40 docker run -itd --name javawebapp -p 80:80 nginx'
+                            sh 'ssh -o StrictHostKeyChecking=no vagrant@100.0.0.40 docker run -itd --name web_server -p 8080:8080 ashokbawge/jenkins_pipeline_demo:${BUILD_NUMBER}'
                            }
              }
             
