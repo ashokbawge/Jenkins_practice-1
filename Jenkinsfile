@@ -34,6 +34,7 @@ pipeline {
                 
                 
                 sh ' docker push ashokbawge/jenkins_pipeline_demo:${BUILD_NUMBER}  '
+                sh ' docker rmi ashokbawge/jenkins_pipeline_demo:${BUILD_NUMBER} '
             }
         }
         
