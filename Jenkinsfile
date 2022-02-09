@@ -45,6 +45,7 @@ pipeline {
                             sh ' ssh   -o StrictHostKeyChecking=no vagrant@100.0.0.50 docker stop javawebapp || true '
                              sh ' ssh   -o StrictHostKeyChecking=no vagrant@100.0.0.50 docker rm javawebapp || true ' 
                             sh 'ssh -o StrictHostKeyChecking=no vagrant@100.0.0.50 docker run -itd --name javawebapp -p 8080:8080 ashokbawge/jenkins_pipeline_demo:${BUILD_NUMBER}'
+                            sh ' ssh -o StrictHostKeyChecking=no vagrant@100.0.0.50 docker rmi ashokbawge/jenkins_pipeline_demo:${BUILD_NUMBER} '
                            }
              }
             
